@@ -1,0 +1,80 @@
+com.example.SomeTest:validateMainPage - PASSED
+com.example.SomeTest:theCorrespondenceOfTheIndicatedAndDisplayedCurrency - PASSED
+com.example.SomeTest:setTheCurrency - PASSED
+com.example.SomeTest:searchTheDirectory - PASSED
+com.example.SomeTest:checkingTheSearchResult - PASSED
+com.example.SomeTest:theCorrespondenceOfTheIndicatedAndDisplayedCurrency2 - PASSED
+com.example.SomeTest:sortSearchResults - PASSED
+com.example.SomeTest:heckTheDiscount - PASSED
+com.example.SomeTest:checkingTheOrderOfSortingGoodsInTheList - PASSED
+com.example.SomeTest:searchForDiscountProducts - PASSED
+
+
+--------------------------------------------------------------
+
+1    Open main page.
+     Main page opened. Page title is.prestashop-automation
+--------------------------------------------------------------
+
+2    Get the set currency. The set currency is - ?
+     Get a list of popular items. The list includes 7 items.
+     Compare the currency and currency in popular goods.
+     The displayed currency corresponds to the established currency.
+--------------------------------------------------------------
+
+3    —lick on the drop down list of currencies.
+     —hoose the currency in dollar in the drop down list.
+     Check that the currency has changed. Expected currency - USD $. Actual currency - USD $
+     The currency changed.
+--------------------------------------------------------------
+
+4    In the search field, enter 'dress' and send a request.
+     Checked whether the request is sent to the server.
+     The request is sent to the server.
+--------------------------------------------------------------
+
+5    Get search results - “Ó‚‡Ó‚: 7.
+     Get a list of products on the page - 7 goods.
+     —ompare search results with a list of goods.
+--------------------------------------------------------------
+
+6    Check the correspondence of the currency on the product to the established currency. Repeat item 2.
+2    Get the set currency. The set currency is - $
+     Get a list of popular items. The list includes 7 items.
+     Compare the currency and currency in popular goods.
+     The displayed currency corresponds to the established currency.
+--------------------------------------------------------------
+
+7    Open the drop-down list of order sorting goods.
+     Sort the order of sorting from cheap to expensive.
+     Waiting for JQuery to finish work.
+     —heck that the order of sorting is selected.
+--------------------------------------------------------------
+
+10   Get a list of discount products.
+     For each element of list:
+          Get the right prices before and after the discount.
+          Check the discount.
+
+          Get the right prices before and after the discount.
+          Check the discount.
+
+--------------------------------------------------------------
+
+8    Get a list of sorted items. The list includes 7 items.
+     —heckÛ‚ whether goods in the list are in the natural order.
+     Goods sorted.
+--------------------------------------------------------------
+
+9    Get a list of discount products.
+     For each element of list:
+          —hecked that the discount is indicated with '%'.
+          Get the right prices before and after the discount.
+          Check price before and after the discount. And their accordance.
+
+          —hecked that the discount is indicated with '%'.
+          Get the right prices before and after the discount.
+          Check price before and after the discount. And their accordance.
+
+--------------------------------------------------------------
+

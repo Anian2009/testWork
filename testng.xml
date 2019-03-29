@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<suite name="All Test Suite">
+    <test verbose="2" preserve-order="true" name="E:/IDEA_Project/testWork/src/test/java">
+        <classes>
+            <class name="com.example.SomeTest">
+            <methods>
+                <include name="validateMainPage"/>
+                <include name="theCorrespondenceOfTheIndicatedAndDisplayedCurrency"/>
+                <include name="setTheCurrency"/>
+                <include name="searchTheDirectory"/>
+                <include name="checkingTheSearchResult"/>
+                <include name="theCorrespondenceOfTheIndicatedAndDisplayedCurrency2"/>
+                <include name="sortSearchResults"/>
+                <include name="checkingTheOrderOfSortingGoodsInTheList"/>
+                <include name="searchForDiscountProducts"/>
+                <include name="heckTheDiscount"/>
+            </methods>
+            </class>
+        </classes>
+    </test>
+    <listeners>
+        <listener class-name="com.example.Listener"/>
+    </listeners>
+</suite>
