@@ -164,7 +164,7 @@ public class SomeTest {
                     .replace(',', '.')));
         }
 
-        stringBuilder.append("     Сheckув whether goods in the list are in the natural order.\n");
+        stringBuilder.append("     Сheck whether goods in the list are in the natural order.\n");
         Assert.assertTrue(Comparators.isInOrder(array, Ordering.natural()), "Goods NOT sorted.");
         stringBuilder.append("     Goods sorted.\n");
         stringBuilder.append("--------------------------------------------------------------\n\n");
