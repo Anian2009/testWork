@@ -3,6 +3,7 @@ package com.example;
 import com.example.model.WriteLog;
 import com.google.common.collect.Comparators;
 import com.google.common.collect.Ordering;
+import io.qameta.allure.junit4.DisplayName;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
@@ -35,6 +36,7 @@ public class SomeTest extends WriteLog {
     }
 
     @Test
+    @DisplayName("Open a test page.")
     public void validateMainPage() {
         log("1    Open main page.\n");
 
@@ -44,6 +46,7 @@ public class SomeTest extends WriteLog {
     }
 
     @Test(dependsOnMethods = "validateMainPage")
+    @DisplayName("Сhecking the correctness of displaying prices for products with the specified price.")
     public void theCorrespondenceOfTheIndicatedAndDisplayedCurrency() {
         log("2    Get the set currency. ");
 
@@ -66,6 +69,7 @@ public class SomeTest extends WriteLog {
     }
 
     @Test(dependsOnMethods = "theCorrespondenceOfTheIndicatedAndDisplayedCurrency")
+    @DisplayName("Change the type of currency.")
     public void setTheCurrency() {
         Actions action = new Actions(driver);
         WebElement dropDownList = driver.findElement(By.xpath("//div[@id='_desktop_currency_selector']//i"));
@@ -89,6 +93,7 @@ public class SomeTest extends WriteLog {
     }
 
     @Test(dependsOnMethods = "setTheCurrency")
+    @DisplayName("Search for goods in the catalog.")
     public void searchTheDirectory() {
         log("4    In the search field, enter 'dress' and send a request.\n");
         WebElement input = driver.findElement(By.xpath("//input[@name='s']"));
@@ -102,6 +107,7 @@ public class SomeTest extends WriteLog {
     }
 
     @Test(dependsOnMethods = "searchTheDirectory")
+    @DisplayName("Checking the number of items found matches the search resultsg.")
     public void checkingTheSearchResult() {
         log("5    Get search results - ");
         WebElement searchResult = driver.findElement(By.xpath("//*[contains(text(), 'Товаров: ')]"));
@@ -118,6 +124,7 @@ public class SomeTest extends WriteLog {
     }
 
     @Test(dependsOnMethods = "searchTheDirectory")
+    @DisplayName("Check that the currency on the price tags is in dollars.")
     public void theCorrespondenceOfTheIndicatedAndDisplayedCurrency2() {
         log("6    Check the correspondence of the currency on the product to the established currency. " +
                 "Repeat item 2.\n");
@@ -125,6 +132,7 @@ public class SomeTest extends WriteLog {
     }
 
     @Test(dependsOnMethods = "searchTheDirectory")
+    @DisplayName("Modify sort order.")
     public void sortSearchResults() {
         log("7    Open the drop-down list of order sorting goods.\n");
         driver.findElement(By.xpath("//div[@id='js-product-list-top']//i")).click();
@@ -146,6 +154,7 @@ public class SomeTest extends WriteLog {
     }
 
     @Test(dependsOnMethods = "sortSearchResults")
+    @DisplayName("Check that the goods are sorted correctly.")
     public void checkingTheOrderOfSortingGoodsInTheList() {
         log("8    Get a list of sorted items. ");
         List<WebElement> listOfGoods = driver.findElements(By.xpath("//span[@class='price']"));
@@ -164,6 +173,7 @@ public class SomeTest extends WriteLog {
     }
 
     @Test(dependsOnMethods = "sortSearchResults")
+    @DisplayName("Check that the discount product contains the old price, new price and discount in %")
     public void searchForDiscountProducts() {
         log("9    Get a list of discount products.\n     For each element of list:\n");
         List<WebElement> list = driver.findElements(By.xpath("//span[@class='discount-percentage']"));
@@ -186,6 +196,7 @@ public class SomeTest extends WriteLog {
     }
 
     @Test(dependsOnMethods = "searchTheDirectory")
+    @DisplayName("Check that the discount is correct.")
     public void heckTheDiscount() {
         log("10   Get a list of discount products.\n     For each element of list:\n");
         List<WebElement> list = driver.findElements(By.xpath("//span[@class='discount-percentage']"));
